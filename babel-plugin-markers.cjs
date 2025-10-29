@@ -1,12 +1,30 @@
+// babel-plugin-markers.cjs (DEV / INSPECTION MODE)
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-module.exports = function markerPlugin() {
-  const markersByFile = {};
+module.exports = function markerPlugin(babel) {
+  const t = babel.types;
+
+  const CONFIG = {
+    outputPath: "markers.json",
+    allowedElements: [
+      "h1", "h2", "h3", "h4", "h5", "h6",
+      "p", "span", "section", "textarea", "label", "input",
+      "icon", "image", "linkwrapper"
+    ],
+    validRoots: ["src/layout/", "src/pages/"]
+  };
 
   return {
+    name: "babel-plugin-markers-dev",
     visitor: {
+      Program: {
+        enter(_, state) {
+          state.file.metadata.markers = [];
+        },
+      },
+
       JSXOpeningElement(pathNode, state) {
         const loc = pathNode.node.loc;
         const file = state.file.opts.filename;
@@ -17,53 +35,102 @@ module.exports = function markerPlugin() {
           .split(path.sep)
           .join(path.posix.sep);
 
+        const isValidRoot = CONFIG.validRoots.some((root) =>
+          relativeFile.startsWith(root)
+        );
+        if (!isValidRoot) return;
+
+        let nameNode = pathNode.node.name;
+        let componentName = "Unknown";
+
+        if (t.isJSXIdentifier(nameNode)) {
+          componentName = nameNode.name;
+        }
+
+        // ✅ Only mark allowed elements (case insensitive match)
+        const isAllowedHtml = CONFIG.allowedElements.includes(
+          componentName.toLowerCase()
+        );
+        if (!isAllowedHtml) return;
+
         const hash = crypto
           .createHash("md5")
           .update(`${relativeFile}:${loc.start.line}:${loc.start.column}`)
           .digest("hex")
           .slice(0, 8);
 
-        const componentName =
-          pathNode.node.name.name || pathNode.node.name?.object?.name || "Unknown";
+        const newMarker = `${componentName}-${hash}`;
 
-        const markerId = `${componentName}-${hash}`;
-
-        // --- NEW: Only inject if not already injected ---
-        const alreadyHasMarker = pathNode.node.attributes.some(
-          (attr) => attr.type === "JSXAttribute" && attr.name.name === "data-marker"
+        const existingAttrIndex = pathNode.node.attributes.findIndex(
+          (attr) =>
+            t.isJSXAttribute(attr) &&
+            t.isJSXIdentifier(attr.name) &&
+            attr.name.name === "data-marker"
         );
-        if (!alreadyHasMarker) {
-          pathNode.node.attributes.push({
-            type: "JSXAttribute",
-            name: { type: "JSXIdentifier", name: "data-marker" },
-            value: { type: "StringLiteral", value: markerId },
-          });
+
+        let existingMarkers = [];
+        if (existingAttrIndex >= 0) {
+          const attr = pathNode.node.attributes[existingAttrIndex];
+          const raw = attr.value?.value || "";
+          existingMarkers = raw.split(";").map((m) => m.trim()).filter(Boolean);
         }
 
-        // Store info
-        const type =
-          componentName[0] === componentName[0].toUpperCase() ? "component" : "html";
+        if (!existingMarkers.includes(newMarker)) existingMarkers.push(newMarker);
+        const merged = existingMarkers.join(";");
 
-        if (!markersByFile[relativeFile]) {
-          markersByFile[relativeFile] = [];
+        if (existingAttrIndex >= 0) {
+          pathNode.node.attributes[existingAttrIndex].value =
+            t.stringLiteral(merged);
+        } else {
+          pathNode.node.attributes.push(
+            t.jsxAttribute(
+              t.jsxIdentifier("data-marker"),
+              t.stringLiteral(merged)
+            )
+          );
         }
-        markersByFile[relativeFile].push({
-          id: markerId,
+
+        state.file.metadata.markers.push({
+          id: newMarker,
           file: relativeFile,
-          start: { line: loc.start.line, column: loc.start.column },
-          end: { line: loc.end.line, column: loc.end.column },
+          start: loc.start,
+          end: loc.end,
           component: componentName,
-          type,
-          props: {},
+          type: "html",
         });
       },
     },
 
-    post() {
-      const out = path.resolve(process.cwd(), "markers.json");
-      fs.writeFileSync(out, JSON.stringify(markersByFile, null, 2), "utf8");
+    post(state) {
+      const outPath = path.resolve(process.cwd(), CONFIG.outputPath);
+      let allMarkers = {};
+
+      if (fs.existsSync(outPath)) {
+        try {
+          allMarkers = JSON.parse(fs.readFileSync(outPath, "utf8")) || {};
+        } catch {
+          allMarkers = {};
+        }
+      }
+
+      const currentFile = state.opts.filename;
+      const relativeFile = path
+        .relative(process.cwd(), currentFile)
+        .split(path.sep)
+        .join(path.posix.sep);
+
+      const markers = state.metadata.markers || [];
+
+      if (markers.length > 0) {
+        allMarkers[relativeFile] = markers;
+      } else {
+        delete allMarkers[relativeFile];
+      }
+
+      fs.writeFileSync(outPath, JSON.stringify(allMarkers, null, 2), "utf8");
+
       console.log(
-        `[babel-plugin-markers] Wrote markers for ${Object.keys(markersByFile).length} files → ${out}`
+        `[babel-plugin-markers] ${relativeFile}: ${markers.length} markers`
       );
     },
   };

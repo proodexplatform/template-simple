@@ -1,1291 +1,150 @@
 {
-  "src/main.tsx": [
+  "src/pages/Home.tsx": [
     {
-      "id": "Unknown-29bd0ed3",
-      "file": "src/main.tsx",
+      "id": "h1-48ddd6a7",
+      "file": "src/pages/Home.tsx",
       "start": {
         "line": 8,
-        "column": 2
+        "column": 6,
+        "index": 165
       },
       "end": {
         "line": 8,
-        "column": 20
+        "column": 10,
+        "index": 169
       },
-      "component": "Unknown",
-      "type": "component",
-      "props": {}
+      "component": "h1",
+      "type": "html"
     },
     {
-      "id": "App-196a0a7e",
-      "file": "src/main.tsx",
+      "id": "p-f00a0ad3",
+      "file": "src/pages/Home.tsx",
       "start": {
         "line": 9,
-        "column": 4
+        "column": 6,
+        "index": 216
       },
       "end": {
         "line": 9,
-        "column": 11
+        "column": 9,
+        "index": 219
       },
-      "component": "App",
-      "type": "component",
-      "props": {}
+      "component": "p",
+      "type": "html"
+    },
+    {
+      "id": "p-2bce5ed0",
+      "file": "src/pages/Home.tsx",
+      "start": {
+        "line": 10,
+        "column": 6,
+        "index": 268
+      },
+      "end": {
+        "line": 10,
+        "column": 9,
+        "index": 271
+      },
+      "component": "p",
+      "type": "html"
     }
   ],
-  "src/App.tsx": [
+  "src/layout/Layout.tsx": [
     {
-      "id": "section-f8a0d2d5",
-      "file": "src/App.tsx",
+      "id": "LinkWrapper-723c7d6c",
+      "file": "src/layout/Layout.tsx",
       "start": {
-        "line": 75,
-        "column": 4
+        "line": 18,
+        "column": 10,
+        "index": 459
       },
       "end": {
-        "line": 75,
-        "column": 52
+        "line": 18,
+        "column": 85,
+        "index": 534
       },
-      "component": "section",
-      "type": "html",
-      "props": {
-        "className": true
-      }
+      "component": "LinkWrapper",
+      "type": "html"
     },
     {
-      "id": "h1-b6d8f544",
-      "file": "src/App.tsx",
+      "id": "span-fdf0bcfa",
+      "file": "src/layout/Layout.tsx",
       "start": {
-        "line": 76,
-        "column": 6
+        "line": 18,
+        "column": 85,
+        "index": 534
       },
       "end": {
-        "line": 76,
-        "column": 10
-      },
-      "component": "h1",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "p-0e90ee9c",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 77,
-        "column": 6
-      },
-      "end": {
-        "line": 77,
-        "column": 9
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Image-bf0afd21",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 78,
-        "column": 6
-      },
-      "end": {
-        "line": 83,
-        "column": 8
-      },
-      "component": "Image",
-      "type": "component",
-      "props": {
-        "src": true,
-        "alt": true,
-        "width": true,
-        "height": true
-      }
-    },
-    {
-      "id": "span-e69c3e4e",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 84,
-        "column": 6
-      },
-      "end": {
-        "line": 84,
-        "column": 12
+        "line": 18,
+        "column": 91,
+        "index": 540
       },
       "component": "span",
-      "type": "html",
-      "props": {}
+      "type": "html"
     },
     {
-      "id": "Icon-bba8420e",
-      "file": "src/App.tsx",
+      "id": "span-0a0181ee",
+      "file": "src/layout/Layout.tsx",
       "start": {
-        "line": 85,
-        "column": 8
+        "line": 18,
+        "column": 104,
+        "index": 553
       },
       "end": {
-        "line": 85,
-        "column": 56
-      },
-      "component": "Icon",
-      "type": "component",
-      "props": {
-        "name": true,
-        "className": true
-      }
-    },
-    {
-      "id": "section-d13efcee",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 87,
-        "column": 6
-      },
-      "end": {
-        "line": 87,
-        "column": 15
-      },
-      "component": "section",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "h2-01a3a8ea",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 88,
-        "column": 8
-      },
-      "end": {
-        "line": 88,
-        "column": 12
-      },
-      "component": "h2",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "p-f92ca4df",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 89,
-        "column": 8
-      },
-      "end": {
-        "line": 89,
-        "column": 11
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "section-27aaa7f7",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 77,
-        "column": 4
-      },
-      "end": {
-        "line": 77,
-        "column": 52
-      },
-      "component": "section",
-      "type": "html",
-      "props": {
-        "className": true
-      }
-    },
-    {
-      "id": "h1-bf0afd21",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 78,
-        "column": 6
-      },
-      "end": {
-        "line": 78,
-        "column": 10
-      },
-      "component": "h1",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "p-0c6d3bda",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 79,
-        "column": 6
-      },
-      "end": {
-        "line": 79,
-        "column": 9
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Image-ebf9bc76",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 80,
-        "column": 6
-      },
-      "end": {
-        "line": 85,
-        "column": 8
-      },
-      "component": "Image",
-      "type": "component",
-      "props": {
-        "src": true,
-        "alt": true,
-        "width": true,
-        "height": true
-      }
-    },
-    {
-      "id": "span-6ff39c6e",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 86,
-        "column": 6
-      },
-      "end": {
-        "line": 86,
-        "column": 12
+        "line": 18,
+        "column": 110,
+        "index": 559
       },
       "component": "span",
-      "type": "html",
-      "props": {}
+      "type": "html"
     },
     {
-      "id": "Icon-c43dd0e1",
-      "file": "src/App.tsx",
+      "id": "LinkWrapper-39e7afde",
+      "file": "src/layout/Layout.tsx",
       "start": {
-        "line": 87,
-        "column": 8
+        "line": 20,
+        "column": 8,
+        "index": 615
       },
       "end": {
-        "line": 87,
-        "column": 56
+        "line": 20,
+        "column": 38,
+        "index": 645
       },
-      "component": "Icon",
-      "type": "component",
-      "props": {
-        "name": true,
-        "className": true
-      }
+      "component": "LinkWrapper",
+      "type": "html"
     },
     {
-      "id": "section-4b31cd1c",
-      "file": "src/App.tsx",
+      "id": "p-ebd3d79b",
+      "file": "src/layout/Layout.tsx",
       "start": {
-        "line": 89,
-        "column": 6
+        "line": 35,
+        "column": 8,
+        "index": 1142
       },
       "end": {
-        "line": 89,
-        "column": 15
-      },
-      "component": "section",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "h2-66742a7b",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 90,
-        "column": 8
-      },
-      "end": {
-        "line": 90,
-        "column": 12
-      },
-      "component": "h2",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "p-9ce41916",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 91,
-        "column": 8
-      },
-      "end": {
-        "line": 91,
-        "column": 11
+        "line": 35,
+        "column": 11,
+        "index": 1145
       },
       "component": "p",
-      "type": "html",
-      "props": {}
+      "type": "html"
     },
     {
-      "id": "section-27aaa7f7",
-      "file": "src/App.tsx",
+      "id": "span-783a0f7b",
+      "file": "src/layout/Layout.tsx",
       "start": {
-        "line": 77,
-        "column": 4
+        "line": 35,
+        "column": 45,
+        "index": 1179
       },
       "end": {
-        "line": 77,
-        "column": 52
-      },
-      "component": "section",
-      "type": "html",
-      "props": {
-        "className": true
-      }
-    },
-    {
-      "id": "h1-bf0afd21",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 78,
-        "column": 6
-      },
-      "end": {
-        "line": 78,
-        "column": 10
-      },
-      "component": "h1",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "svg-0c6d3bda",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 79,
-        "column": 6
-      },
-      "end": {
-        "line": 79,
-        "column": 31
-      },
-      "component": "svg",
-      "type": "html",
-      "props": {
-        "viewBox": true
-      }
-    },
-    {
-      "id": "circle-b09f184f",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 79,
-        "column": 31
-      },
-      "end": {
-        "line": 79,
-        "column": 64
-      },
-      "component": "circle",
-      "type": "html",
-      "props": {
-        "cx": true,
-        "cy": true,
-        "r": true
-      }
-    },
-    {
-      "id": "p-ebf9bc76",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 80,
-        "column": 6
-      },
-      "end": {
-        "line": 80,
-        "column": 9
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Image-e05c9784",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 81,
-        "column": 6
-      },
-      "end": {
-        "line": 86,
-        "column": 8
-      },
-      "component": "Image",
-      "type": "component",
-      "props": {
-        "src": true,
-        "alt": true,
-        "width": true,
-        "height": true
-      }
-    },
-    {
-      "id": "span-d13efcee",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 87,
-        "column": 6
-      },
-      "end": {
-        "line": 87,
-        "column": 12
+        "line": 35,
+        "column": 51,
+        "index": 1185
       },
       "component": "span",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Icon-01a3a8ea",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 88,
-        "column": 8
-      },
-      "end": {
-        "line": 88,
-        "column": 56
-      },
-      "component": "Icon",
-      "type": "component",
-      "props": {
-        "name": true,
-        "className": true
-      }
-    },
-    {
-      "id": "section-d7a2195c",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 90,
-        "column": 6
-      },
-      "end": {
-        "line": 90,
-        "column": 15
-      },
-      "component": "section",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "h2-9ce41916",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 91,
-        "column": 8
-      },
-      "end": {
-        "line": 91,
-        "column": 12
-      },
-      "component": "h2",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "p-6ddb9079",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 92,
-        "column": 8
-      },
-      "end": {
-        "line": 92,
-        "column": 11
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "section-f0f082a3",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 127,
-        "column": 4
-      },
-      "end": {
-        "line": 127,
-        "column": 52
-      },
-      "component": "section",
-      "type": "html",
-      "props": {
-        "className": true
-      }
-    },
-    {
-      "id": "h1-252e7f33",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 128,
-        "column": 6
-      },
-      "end": {
-        "line": 128,
-        "column": 10
-      },
-      "component": "h1",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "svg-d7f3d4aa",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 129,
-        "column": 6
-      },
-      "end": {
-        "line": 129,
-        "column": 31
-      },
-      "component": "svg",
-      "type": "html",
-      "props": {
-        "viewBox": true
-      }
-    },
-    {
-      "id": "circle-4f0401fb",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 129,
-        "column": 31
-      },
-      "end": {
-        "line": 129,
-        "column": 64
-      },
-      "component": "circle",
-      "type": "html",
-      "props": {
-        "cx": true,
-        "cy": true,
-        "r": true
-      }
-    },
-    {
-      "id": "p-cd1c686d",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 130,
-        "column": 6
-      },
-      "end": {
-        "line": 130,
-        "column": 9
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Image-c329f067",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 131,
-        "column": 6
-      },
-      "end": {
-        "line": 136,
-        "column": 8
-      },
-      "component": "Image",
-      "type": "component",
-      "props": {
-        "src": true,
-        "alt": true,
-        "width": true,
-        "height": true
-      }
-    },
-    {
-      "id": "span-67336b11",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 137,
-        "column": 6
-      },
-      "end": {
-        "line": 137,
-        "column": 12
-      },
-      "component": "span",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Icon-9afeacaf",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 138,
-        "column": 8
-      },
-      "end": {
-        "line": 138,
-        "column": 56
-      },
-      "component": "Icon",
-      "type": "component",
-      "props": {
-        "name": true,
-        "className": true
-      }
-    },
-    {
-      "id": "section-e1e2667f",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 140,
-        "column": 6
-      },
-      "end": {
-        "line": 140,
-        "column": 15
-      },
-      "component": "section",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "h2-8e1d0d5a",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 141,
-        "column": 8
-      },
-      "end": {
-        "line": 141,
-        "column": 12
-      },
-      "component": "h2",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "p-c7b783cb",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 142,
-        "column": 8
-      },
-      "end": {
-        "line": 142,
-        "column": 11
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "section-27aaa7f7",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 77,
-        "column": 4
-      },
-      "end": {
-        "line": 77,
-        "column": 52
-      },
-      "component": "section",
-      "type": "html",
-      "props": {
-        "className": true
-      }
-    },
-    {
-      "id": "h1-bf0afd21",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 78,
-        "column": 6
-      },
-      "end": {
-        "line": 78,
-        "column": 10
-      },
-      "component": "h1",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "svg-0c6d3bda",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 79,
-        "column": 6
-      },
-      "end": {
-        "line": 79,
-        "column": 31
-      },
-      "component": "svg",
-      "type": "html",
-      "props": {
-        "viewBox": true
-      }
-    },
-    {
-      "id": "circle-b09f184f",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 79,
-        "column": 31
-      },
-      "end": {
-        "line": 79,
-        "column": 64
-      },
-      "component": "circle",
-      "type": "html",
-      "props": {
-        "cx": true,
-        "cy": true,
-        "r": true
-      }
-    },
-    {
-      "id": "p-ebf9bc76",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 80,
-        "column": 6
-      },
-      "end": {
-        "line": 80,
-        "column": 9
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Image-e05c9784",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 81,
-        "column": 6
-      },
-      "end": {
-        "line": 86,
-        "column": 8
-      },
-      "component": "Image",
-      "type": "component",
-      "props": {
-        "src": true,
-        "alt": true,
-        "width": true,
-        "height": true
-      }
-    },
-    {
-      "id": "span-d13efcee",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 87,
-        "column": 6
-      },
-      "end": {
-        "line": 87,
-        "column": 12
-      },
-      "component": "span",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Icon-01a3a8ea",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 88,
-        "column": 8
-      },
-      "end": {
-        "line": 88,
-        "column": 56
-      },
-      "component": "Icon",
-      "type": "component",
-      "props": {
-        "name": true,
-        "className": true
-      }
-    },
-    {
-      "id": "section-d7a2195c",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 90,
-        "column": 6
-      },
-      "end": {
-        "line": 90,
-        "column": 15
-      },
-      "component": "section",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "h2-9ce41916",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 91,
-        "column": 8
-      },
-      "end": {
-        "line": 91,
-        "column": 12
-      },
-      "component": "h2",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "p-6ddb9079",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 92,
-        "column": 8
-      },
-      "end": {
-        "line": 92,
-        "column": 11
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "section-27aaa7f7",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 77,
-        "column": 4
-      },
-      "end": {
-        "line": 77,
-        "column": 52
-      },
-      "component": "section",
-      "type": "html",
-      "props": {
-        "className": true
-      }
-    },
-    {
-      "id": "h1-bf0afd21",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 78,
-        "column": 6
-      },
-      "end": {
-        "line": 78,
-        "column": 10
-      },
-      "component": "h1",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "svg-0c6d3bda",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 79,
-        "column": 6
-      },
-      "end": {
-        "line": 79,
-        "column": 53
-      },
-      "component": "svg",
-      "type": "html",
-      "props": {
-        "viewBox": true,
-        "className": true
-      }
-    },
-    {
-      "id": "circle-6bd2f0a5",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 79,
-        "column": 53
-      },
-      "end": {
-        "line": 79,
-        "column": 86
-      },
-      "component": "circle",
-      "type": "html",
-      "props": {
-        "cx": true,
-        "cy": true,
-        "r": true
-      }
-    },
-    {
-      "id": "p-ebf9bc76",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 80,
-        "column": 6
-      },
-      "end": {
-        "line": 80,
-        "column": 9
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Image-e05c9784",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 81,
-        "column": 6
-      },
-      "end": {
-        "line": 86,
-        "column": 8
-      },
-      "component": "Image",
-      "type": "component",
-      "props": {
-        "src": true,
-        "alt": true,
-        "width": true,
-        "height": true
-      }
-    },
-    {
-      "id": "span-d13efcee",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 87,
-        "column": 6
-      },
-      "end": {
-        "line": 87,
-        "column": 12
-      },
-      "component": "span",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Icon-01a3a8ea",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 88,
-        "column": 8
-      },
-      "end": {
-        "line": 88,
-        "column": 56
-      },
-      "component": "Icon",
-      "type": "component",
-      "props": {
-        "name": true,
-        "className": true
-      }
-    },
-    {
-      "id": "section-d7a2195c",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 90,
-        "column": 6
-      },
-      "end": {
-        "line": 90,
-        "column": 15
-      },
-      "component": "section",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "h2-9ce41916",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 91,
-        "column": 8
-      },
-      "end": {
-        "line": 91,
-        "column": 12
-      },
-      "component": "h2",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "p-6ddb9079",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 92,
-        "column": 8
-      },
-      "end": {
-        "line": 92,
-        "column": 11
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "section-e798837d",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 85,
-        "column": 4
-      },
-      "end": {
-        "line": 85,
-        "column": 52
-      },
-      "component": "section",
-      "type": "html",
-      "props": {
-        "className": true
-      }
-    },
-    {
-      "id": "h1-6ff39c6e",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 86,
-        "column": 6
-      },
-      "end": {
-        "line": 86,
-        "column": 10
-      },
-      "component": "h1",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "svg-d13efcee",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 87,
-        "column": 6
-      },
-      "end": {
-        "line": 87,
-        "column": 53
-      },
-      "component": "svg",
-      "type": "html",
-      "props": {
-        "viewBox": true,
-        "className": true
-      }
-    },
-    {
-      "id": "circle-01a3a8ea",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 88,
-        "column": 8
-      },
-      "end": {
-        "line": 88,
-        "column": 41
-      },
-      "component": "circle",
-      "type": "html",
-      "props": {
-        "cx": true,
-        "cy": true,
-        "r": true
-      }
-    },
-    {
-      "id": "p-d7a2195c",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 90,
-        "column": 6
-      },
-      "end": {
-        "line": 90,
-        "column": 9
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Image-da0fcd3f",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 91,
-        "column": 6
-      },
-      "end": {
-        "line": 96,
-        "column": 8
-      },
-      "component": "Image",
-      "type": "component",
-      "props": {
-        "src": true,
-        "alt": true,
-        "width": true,
-        "height": true
-      }
-    },
-    {
-      "id": "span-8c235afd",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 97,
-        "column": 6
-      },
-      "end": {
-        "line": 97,
-        "column": 12
-      },
-      "component": "span",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "Icon-dbdcdaf8",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 98,
-        "column": 8
-      },
-      "end": {
-        "line": 98,
-        "column": 56
-      },
-      "component": "Icon",
-      "type": "component",
-      "props": {
-        "name": true,
-        "className": true
-      }
-    },
-    {
-      "id": "section-1015a89a",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 100,
-        "column": 6
-      },
-      "end": {
-        "line": 100,
-        "column": 15
-      },
-      "component": "section",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "h2-9b84fa8b",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 101,
-        "column": 8
-      },
-      "end": {
-        "line": 101,
-        "column": 12
-      },
-      "component": "h2",
-      "type": "html",
-      "props": {}
-    },
-    {
-      "id": "p-649d0fa8",
-      "file": "src/App.tsx",
-      "start": {
-        "line": 102,
-        "column": 8
-      },
-      "end": {
-        "line": 102,
-        "column": 11
-      },
-      "component": "p",
-      "type": "html",
-      "props": {}
-    }
-  ],
-  "src/components/ui/icon.tsx": [
-    {
-      "id": "LucideIcon-69389e12",
-      "file": "src/components/ui/icon.tsx",
-      "start": {
-        "line": 19,
-        "column": 11
-      },
-      "end": {
-        "line": 19,
-        "column": 83
-      },
-      "component": "LucideIcon",
-      "type": "component",
-      "props": {
-        "ref": true,
-        "className": true
-      }
-    },
-    {
-      "id": "LucideIcon-81f96c78",
-      "file": "src/components/ui/icon.tsx",
-      "start": {
-        "line": 23,
-        "column": 6
-      },
-      "end": {
-        "line": 27,
-        "column": 8
-      },
-      "component": "LucideIcon",
-      "type": "component",
-      "props": {
-        "ref": true,
-        "className": true
-      }
-    }
-  ],
-  "src/components/ui/image.tsx": [
-    {
-      "id": "img-587cec8a",
-      "file": "src/components/ui/image.tsx",
-      "start": {
-        "line": 8,
-        "column": 4
-      },
-      "end": {
-        "line": 12,
-        "column": 6
-      },
-      "component": "img",
-      "type": "html",
-      "props": {
-        "ref": true,
-        "className": true
-      }
+      "type": "html"
     }
   ]
 }

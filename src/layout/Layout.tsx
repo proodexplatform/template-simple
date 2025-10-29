@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { LinkWrapper } from '@/components/ui/link-wrapper';
 
 const Layout: React.FC = () => {
   return (
@@ -14,8 +15,9 @@ const Layout: React.FC = () => {
         textAlign: 'center' 
       }}>
         <nav>
-          <a href="/" style={{ color: 'white', textDecoration: 'none' }}>🏠 Home Link</a>
+          <LinkWrapper href="/hh" style={{ color: 'white', textDecoration: 'none' }}><span>Click </span><span>Home Link</span></LinkWrapper>
         </nav>
+        <LinkWrapper href="/register"><button className="bg-blue">Register</button></LinkWrapper>
       </header>
 
       {/* --- Main Content Area (Where the Home page will be rendered) --- */}
@@ -30,7 +32,7 @@ const Layout: React.FC = () => {
         textAlign: 'center', 
         borderTop: '1px solid #ccc' 
       }}>
-        <p>&copy; {new Date().getFullYear()} Simple App</p>
+        <p>&copy; {new Date().getFullYear()} <span>Simple App</span></p>
       </footer>
     </div>
   );

@@ -13,7 +13,6 @@ export const router = createBrowserRouter([
         index: true,      // This path is the default one for the parent '/'
         element: <Home />, // Renders Home component
       },
-      // You can add more routes here, e.g.:
       /*
       {
         path: 'about',
