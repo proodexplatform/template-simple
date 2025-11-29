@@ -1,7 +1,7 @@
 // src/routes/routes.tsx
 
 import { createBrowserRouter } from 'react-router-dom';
-import Layout from '../layout/Layout'; // Import your layout
+import Layout from '../layout/layout'; // Import your layout
 import Home from '../pages/Home';     // Import your home page
 
 export const router = createBrowserRouter([

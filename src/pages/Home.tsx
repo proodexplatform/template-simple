@@ -1,6 +1,6 @@
 // src/pages/Home.tsx
-
 import React from 'react';
+import { CurrencyDollar, CurrencyNgn } from "phosphor-react";
 
 const Home: React.FC = () => {
   return (

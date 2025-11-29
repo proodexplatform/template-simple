@@ -146,5 +146,103 @@
       "component": "span",
       "type": "html"
     }
+  ],
+  "src/layout/layout.tsx": [
+    {
+      "id": "LinkWrapper-3934f10b",
+      "file": "src/layout/layout.tsx",
+      "start": {
+        "line": 18,
+        "column": 10,
+        "index": 459
+      },
+      "end": {
+        "line": 18,
+        "column": 85,
+        "index": 534
+      },
+      "component": "LinkWrapper",
+      "type": "html"
+    },
+    {
+      "id": "span-62ac8950",
+      "file": "src/layout/layout.tsx",
+      "start": {
+        "line": 18,
+        "column": 85,
+        "index": 534
+      },
+      "end": {
+        "line": 18,
+        "column": 91,
+        "index": 540
+      },
+      "component": "span",
+      "type": "html"
+    },
+    {
+      "id": "span-894f82aa",
+      "file": "src/layout/layout.tsx",
+      "start": {
+        "line": 18,
+        "column": 104,
+        "index": 553
+      },
+      "end": {
+        "line": 18,
+        "column": 110,
+        "index": 559
+      },
+      "component": "span",
+      "type": "html"
+    },
+    {
+      "id": "LinkWrapper-e0374789",
+      "file": "src/layout/layout.tsx",
+      "start": {
+        "line": 20,
+        "column": 8,
+        "index": 615
+      },
+      "end": {
+        "line": 20,
+        "column": 38,
+        "index": 645
+      },
+      "component": "LinkWrapper",
+      "type": "html"
+    },
+    {
+      "id": "p-50d3d3dc",
+      "file": "src/layout/layout.tsx",
+      "start": {
+        "line": 35,
+        "column": 8,
+        "index": 1142
+      },
+      "end": {
+        "line": 35,
+        "column": 11,
+        "index": 1145
+      },
+      "component": "p",
+      "type": "html"
+    },
+    {
+      "id": "span-413eed4e",
+      "file": "src/layout/layout.tsx",
+      "start": {
+        "line": 35,
+        "column": 45,
+        "index": 1179
+      },
+      "end": {
+        "line": 35,
+        "column": 51,
+        "index": 1185
+      },
+      "component": "span",
+      "type": "html"
+    }
   ]
 }

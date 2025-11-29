@@ -20,6 +20,8 @@
   --secondary: 240 4.8% 95.9%;
   --muted: 240 4.8% 95.9%;
   --border: 240 5.9% 90%;
+  --autofill-bg: #ffffff;
+  --autofill-text: #000000;
 }
 .dark {
   /* Dark Theme Colors */
@@ -30,6 +32,8 @@
   --secondary: 240 3.7% 15.9%;
   --muted: 240 3.7% 15.9%;
   --border: 240 3.7% 15.9%;
+  --autofill-bg: #0b0b0c;
+  --autofill-text: #ffffff;
 }
 /* Base Styles */
 body {
