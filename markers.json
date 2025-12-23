@@ -6,12 +6,12 @@
       "start": {
         "line": 8,
         "column": 6,
-        "index": 165
+        "index": 226
       },
       "end": {
         "line": 8,
         "column": 10,
-        "index": 169
+        "index": 230
       },
       "component": "h1",
       "type": "html"
@@ -22,12 +22,12 @@
       "start": {
         "line": 9,
         "column": 6,
-        "index": 216
+        "index": 277
       },
       "end": {
         "line": 9,
         "column": 9,
-        "index": 219
+        "index": 280
       },
       "component": "p",
       "type": "html"
@@ -38,12 +38,12 @@
       "start": {
         "line": 10,
         "column": 6,
-        "index": 268
+        "index": 329
       },
       "end": {
         "line": 10,
         "column": 9,
-        "index": 271
+        "index": 332
       },
       "component": "p",
       "type": "html"
