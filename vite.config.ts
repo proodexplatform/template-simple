@@ -1,6 +1,6 @@
 import path from "path";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react"; // Changed from -swc to standard react
 import babel from "vite-plugin-babel";
 
 export default defineConfig(() => ({
@@ -9,30 +9,22 @@ export default defineConfig(() => ({
       "@": path.resolve(__dirname, "src"),
     },
   },
-  server: {
-    watch: {
-      ignored: ["**/markers.json", "**/.markers/**"],
-    },
-  },
   plugins: [
+    // 1. Standard React plugin (uses Babel internally)
     react(),
+    
+    // 2. Your custom Babel transformation
     babel({
-      // ✅ Only apply Babel plugin to JS/TSX files in src,
-      // excluding node_modules and src/components
       filter: (id) =>
         /src\/.*\.[jt]sx?$/.test(id) &&
-        !/src\/components\//.test(id) &&
-        !/node_modules\//.test(id),
-
+        !/node_modules/.test(id),
       babelConfig: {
         presets: [
           ["@babel/preset-react", { runtime: "automatic" }],
           "@babel/preset-typescript",
         ],
         plugins: [
-          [
-            path.resolve(__dirname, "babel-plugin-markers.cjs"),
-          ],
+          [path.resolve(__dirname, "babel-plugin-markers.cjs")],
         ],
       },
     }),

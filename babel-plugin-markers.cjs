@@ -1,137 +1,87 @@
-// babel-plugin-markers.cjs (DEV / INSPECTION MODE)
-const fs = require("fs");
 const path = require("path");
-const crypto = require("crypto");
 
 module.exports = function markerPlugin(babel) {
-  const t = babel.types;
+  const { types: t } = babel;
 
   const CONFIG = {
-    outputPath: "markers.json",
     allowedElements: [
       "h1", "h2", "h3", "h4", "h5", "h6",
       "p", "span", "section", "textarea", "label", "input",
       "icon", "image", "linkwrapper"
     ],
-    validRoots: ["src/layout/", "src/pages/"]
+    // Folders to ignore relative to src/
+    excludedFolders: [
+      "components/ui",
+      "utility",
+      "lib",
+      "styles",
+      "hooks",
+      "context",
+      "config",
+      "assets",
+    ]
   };
 
   return {
-    name: "babel-plugin-markers-dev",
+    name: "babel-plugin-markers-vite",
     visitor: {
-      Program: {
-        enter(_, state) {
-          state.file.metadata.markers = [];
-        },
-      },
+      JSXOpeningElement(nodePath, state) {
+        const filename = state.file.opts.filename;
+        if (!filename) return;
 
-      JSXOpeningElement(pathNode, state) {
-        const loc = pathNode.node.loc;
-        const file = state.file.opts.filename;
-        if (!loc || !file) return;
+        // 1. Normalize and filter paths
+        const normalizedPath = filename.replace(/\\/g, "/");
+        
+        // Ensure we are only touching files inside src/
+        if (!normalizedPath.includes("/src/")) return;
 
-        const relativeFile = path
-          .relative(process.cwd(), file)
-          .split(path.sep)
-          .join(path.posix.sep);
+        const srcIndex = normalizedPath.indexOf("/src/");
+        const relativeToSrc = normalizedPath.substring(srcIndex + 5); // path after "src/"
 
-        const isValidRoot = CONFIG.validRoots.some((root) =>
-          relativeFile.startsWith(root)
+        // 2. Check Exclusions
+        const isExcluded = CONFIG.excludedFolders.some(folder => 
+          relativeToSrc.startsWith(`${folder}/`) || relativeToSrc === folder
         );
-        if (!isValidRoot) return;
+        if (isExcluded) return;
 
-        let nameNode = pathNode.node.name;
-        let componentName = "Unknown";
-
-        if (t.isJSXIdentifier(nameNode)) {
-          componentName = nameNode.name;
+        // 3. Identify Component Name
+        let name = "Unknown";
+        const n = nodePath.node.name;
+        if (t.isJSXIdentifier(n)) {
+          name = n.name;
+        } else if (t.isJSXMemberExpression(n)) {
+          name = n.property.name; // e.g., 'p' in 'Styled.p'
         }
 
-        // ✅ Only mark allowed elements (case insensitive match)
-        const isAllowedHtml = CONFIG.allowedElements.includes(
-          componentName.toLowerCase()
-        );
-        if (!isAllowedHtml) return;
-
-        const hash = crypto
-          .createHash("md5")
-          .update(`${relativeFile}:${loc.start.line}:${loc.start.column}`)
-          .digest("hex")
-          .slice(0, 8);
-
-        const newMarker = `${componentName}-${hash}`;
-
-        const existingAttrIndex = pathNode.node.attributes.findIndex(
-          (attr) =>
-            t.isJSXAttribute(attr) &&
-            t.isJSXIdentifier(attr.name) &&
-            attr.name.name === "data-marker"
-        );
-
-        let existingMarkers = [];
-        if (existingAttrIndex >= 0) {
-          const attr = pathNode.node.attributes[existingAttrIndex];
-          const raw = attr.value?.value || "";
-          existingMarkers = raw.split(";").map((m) => m.trim()).filter(Boolean);
+        // Case-insensitive check against allowed elements
+        if (!CONFIG.allowedElements.includes(name.toLowerCase()) && !CONFIG.allowedElements.includes(name)) {
+          return;
         }
 
-        if (!existingMarkers.includes(newMarker)) existingMarkers.push(newMarker);
-        const merged = existingMarkers.join(";");
+        const loc = nodePath.node.loc;
+        if (!loc) return;
+
+        // 4. Encode ID (Base64) - Matches your Next.js logic
+        const rawId = `${relativeToSrc}|${loc.start.line}|${loc.end.line}`;
+        const encoded = Buffer.from(rawId).toString('base64').replace(/=/g, "");
+        const markerValue = `${name}-${encoded}`;
+
+        // 5. Inject/Update data-marker attribute
+        const existingAttrIndex = nodePath.node.attributes.findIndex(
+          a => t.isJSXAttribute(a) && t.isJSXIdentifier(a.name) && a.name.name === "data-marker"
+        );
 
         if (existingAttrIndex >= 0) {
-          pathNode.node.attributes[existingAttrIndex].value =
-            t.stringLiteral(merged);
+          nodePath.node.attributes[existingAttrIndex].value = t.stringLiteral(markerValue);
         } else {
-          pathNode.node.attributes.push(
-            t.jsxAttribute(
-              t.jsxIdentifier("data-marker"),
-              t.stringLiteral(merged)
-            )
+          nodePath.node.attributes.push(
+            t.jsxAttribute(t.jsxIdentifier("data-marker"), t.stringLiteral(markerValue))
           );
         }
 
-        state.file.metadata.markers.push({
-          id: newMarker,
-          file: relativeFile,
-          start: loc.start,
-          end: loc.end,
-          component: componentName,
-          type: "html",
-        });
-      },
-    },
-
-    post(state) {
-      const outPath = path.resolve(process.cwd(), CONFIG.outputPath);
-      let allMarkers = {};
-
-      if (fs.existsSync(outPath)) {
-        try {
-          allMarkers = JSON.parse(fs.readFileSync(outPath, "utf8")) || {};
-        } catch {
-          allMarkers = {};
-        }
+        // Optional: Keep terminal logging for dev visibility
+        console.log(`[Babel-Vite] Marked ${name} in ${relativeToSrc}`);
       }
-
-      const currentFile = state.opts.filename;
-      const relativeFile = path
-        .relative(process.cwd(), currentFile)
-        .split(path.sep)
-        .join(path.posix.sep);
-
-      const markers = state.metadata.markers || [];
-
-      if (markers.length > 0) {
-        allMarkers[relativeFile] = markers;
-      } else {
-        delete allMarkers[relativeFile];
-      }
-
-      fs.writeFileSync(outPath, JSON.stringify(allMarkers, null, 2), "utf8");
-
-      console.log(
-        `[babel-plugin-markers] ${relativeFile}: ${markers.length} markers`
-      );
-    },
+    }
   };
 };
