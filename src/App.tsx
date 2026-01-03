@@ -12,6 +12,7 @@ export function App() {
           {/* Your website content goes here */}
           <h1>Welcome to My Website</h1>
           <p>This is the main page of your website.</p>
+          <p>Just testing the content.</p>
         </div>
       </ThemeProvider>
     </>
